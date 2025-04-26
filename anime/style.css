@@ -1,0 +1,225 @@
+:root{
+    --cor-de-pele: rgb(238, 196, 119);
+    --cor-de-pele-sombra: rgb(221, 177, 111);
+
+    --sombrancelhas: #000000;
+    --delineado: #000000;
+
+    --olhos: rgb(40, 121, 2);
+
+    --cabelo-claro: red;
+    --cabelo-escuro: rgb(133, 0, 0);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(129, 34, 129);
+}
+
+.cabeça{
+    position: absolute;
+    z-index: 1;
+    background: var(--cor-de-pele-sombra);
+    height: 190px;
+    width: 180px; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50% 50% 50% 50% / 30% 30% 60% 60%;
+
+}
+
+.cabeça::after{
+    content: '';
+    z-index: 1;
+    position:absolute;
+    background: var(--cor-de-pele);
+    height: 185px;
+    width: 160px;
+    left: 10px;
+    border-radius: 50% 50% 50% 50% / 30% 30% 60% 60%;
+}
+
+.olhos{
+    z-index: 2;
+
+    position: absolute;
+    background: white;
+    width: 40px;
+    height: 40px;
+    top: 30%;
+    left: 20%;
+    border: 5px solid var(--delineado);
+    border-radius: 50% 50% 10px 10px;
+    border-bottom: none;
+    border-right: none;
+}
+
+.olhos::after{
+    content: '';
+    z-index: 1;
+
+    position: absolute;
+    background: white;
+    width: 40px;
+    height: 40px;
+    top: -5px;
+    left: 60px;
+    border: 5px solid var(--delineado);
+    border-radius: 50% 50% 10px 10px;
+    border-bottom: none;
+    border-left: none;
+}
+
+.iris{
+    position: absolute;
+    background: var(--olhos);
+    width: 20px;
+    height: 30px;
+    top: 10px;
+    left: 15px;
+    border-radius: 50% 50% 10% 10%;
+
+}
+
+.iris::after{
+    content: '';
+    z-index: 2;
+    position: absolute;
+    background: var(--olhos);
+    width: 20px;
+    height: 30px;
+    top: 0px;
+    left: 50px;
+    border-radius: 50% 50% 10% 10%;
+}
+
+
+.sombrancelhas{
+    z-index: 2;
+    position: absolute;
+    background:var(--sombrancelhas);
+    width: 40px;
+    height: 10px;
+    top:25%;
+    left:20%;
+    transform: rotate(-3deg);
+    border-radius: 100% 100% 50% 50% / 100% 100% 0% 0%;
+}
+
+.sombrancelhas::after{
+    content: '';
+    position: absolute;
+    background:var(--sombrancelhas);
+    width: 40px;
+    height: 10px;
+    top:3px;
+    left:66px;
+    transform: rotate(3deg);
+    border-radius: 100% 100% 50% 50% / 100% 100% 0% 0%;
+}
+
+.boca{
+    position: absolute;
+    z-index:2;
+    background:rgb(194, 10, 10);
+    height: 50px;
+    width: 50px;
+
+    top:63%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 10% 10% 50% 50% ;
+}
+.boca::after{
+    content: '';
+    position:absolute;
+    z-index: 1;
+    width: 40px;
+    height: 20px;
+    background:red;
+    bottom: 4px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 50% 50% 50% 50% / 29% 25% 75% 71% ;
+}
+
+.cabelo{
+    position:absolute;
+    z-index: 0;
+    width: 180px;
+    height: 260px;
+    background: var(--cabelo-escuro);
+    filter:drop-shadow(1px 1px 12px black)
+            drop-shadow(1px 1px 12px var(--cabelo-escuro));
+
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border-radius: 50% 50% 0% 0% ;
+
+}
+
+.fio1, .fio2, .fio3, .fio4, .fio5{
+    position:absolute;
+    z-index: 10;
+    background:var(--cabelo-claro);
+}
+
+.fio1{
+    width: 30px;
+    height: 250px;
+    right: 0;
+    top: 0;
+    box-shadow:1px 1px 10px rgb(155, 0, 0);
+    border-radius: 0% 100% 10% 90% / 
+                    80% 20% 80% 20%;
+}
+
+.fio2{
+    width: 35%;
+    height: 70px;
+    z-index: 11;
+    background:var(--cabelo-claro);
+    left: 29px;
+    top: -30px;
+    box-shadow:1px 1px 10px rgb(155, 0, 0);
+    border-radius: 100% 0% 100% 0%/
+                    50% 50% 50% 50%;
+}
+.fio3{
+    width:35%;
+    height: 70px;
+    background: var(--cabelo-claro);
+    left:calc(29px + 35%);
+    top: -30px;
+    box-shadow:1px 1px 10px rgb(155, 0, 0);
+    border-radius: 0% 100% 0% 100%/
+                    50% 50% 50% 50%;
+}
+.fio4{
+    width: 30px;
+    height: 250px;
+    left: 0;
+    top: 0;
+    box-shadow:1px 1px 10px rgb(155, 0, 0);
+    border-radius: 100% 0% 90% 10% / 
+                    20% 80% 20% 80%
+}
+
+.fio5{
+    width: 50px;
+    height: 50px;
+    background: var(--cabelo-escuro);
+    z-index: -1;
+
+    border-radius: 50%;
+
+    top: -35%;
+    left: 50%;
+    transform:translate(-50%, 0%);
+    filter:drop-shadow(1px 1px 12px black)
+}
